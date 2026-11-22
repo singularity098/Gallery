@@ -40,10 +40,18 @@ class GetMediaAsynctask(
         val media = if (showAll) {
             val foldersToScan = mediaFetcher.getFoldersToScan().filter { it != RECYCLE_BIN && it != FAVORITES && !context.config.isFolderProtected(it) }
             val media = ArrayList<Medium>()
+            // query MediaStore only once for all folders, instead of once per folder
+            val android11Files = mediaFetcher.getAndroid11FolderMedia(
+                isPickImage, isPickVideo, favoritePaths, false, getProperDateTaken, dateTakens
+            )
             foldersToScan.forEach {
+                if (mediaFetcher.shouldStop) {
+                    return@forEach
+                }
+
                 val newMedia = mediaFetcher.getFilesFrom(
                     it, isPickImage, isPickVideo, getProperDateTaken, getProperLastModified, getProperFileSize,
-                    favoritePaths, getVideoDurations, lastModifieds, dateTakens.clone() as HashMap<String, Long>, null
+                    favoritePaths, getVideoDurations, lastModifieds, dateTakens, android11Files
                 )
                 media.addAll(newMedia)
             }

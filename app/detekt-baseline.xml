@@ -29,7 +29,7 @@
     <ID>CyclomaticComplexMethod:Activity.kt$fun AppCompatActivity.fixDateTaken( paths: ArrayList&lt;String&gt;, showToasts: Boolean, hasRescanned: Boolean = false, callback: (() -&gt; Unit)? = null )</ID>
     <ID>CyclomaticComplexMethod:Context.kt$@Suppress("UNCHECKED_CAST") fun Context.getSortedDirectories(source: ArrayList&lt;Directory&gt;): ArrayList&lt;Directory&gt;</ID>
     <ID>CyclomaticComplexMethod:Context.kt$fun Context.getCachedDirectories( getVideosOnly: Boolean = false, getImagesOnly: Boolean = false, forceShowHidden: Boolean = false, forceShowExcluded: Boolean = false, callback: (ArrayList&lt;Directory&gt;) -&gt; Unit, )</ID>
-    <ID>CyclomaticComplexMethod:Context.kt$fun Context.getCachedMedia( path: String, getVideosOnly: Boolean = false, getImagesOnly: Boolean = false, callback: (ArrayList&lt;ThumbnailItem&gt;) -&gt; Unit )</ID>
+    <ID>CyclomaticComplexMethod:Context.kt$fun Context.getCachedMedia( path: String, getVideosOnly: Boolean = false, getImagesOnly: Boolean = false, validateFiles: Boolean = true, callback: (ArrayList&lt;ThumbnailItem&gt;) -&gt; Unit )</ID>
     <ID>CyclomaticComplexMethod:Context.kt$fun Context.getDirectParentSubfolders( dirs: ArrayList&lt;Directory&gt;, currentPathPrefix: String ): ArrayList&lt;Directory&gt;</ID>
     <ID>CyclomaticComplexMethod:DirectoryAdapter.kt$DirectoryAdapter$override fun actionItemPressed(id: Int)</ID>
     <ID>CyclomaticComplexMethod:DirectoryAdapter.kt$DirectoryAdapter$private fun copyMoveTo(selectedPaths: Collection&lt;String&gt;, isCopyOperation: Boolean)</ID>

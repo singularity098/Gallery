@@ -923,6 +923,7 @@ fun Context.getCachedMedia(
     path: String,
     getVideosOnly: Boolean = false,
     getImagesOnly: Boolean = false,
+    validateFiles: Boolean = true,
     callback: (ArrayList<ThumbnailItem>) -> Unit
 ) {
     ensureBackgroundThread {
@@ -984,6 +985,10 @@ fun Context.getCachedMedia(
         mediaFetcher.sortMedia(media, config.getFolderSorting(pathToUse))
         val grouped = mediaFetcher.groupMedia(media, pathToUse)
         callback(grouped.clone() as ArrayList<ThumbnailItem>)
+        if (!validateFiles) {
+            return@ensureBackgroundThread
+        }
+
         val OTGPath = config.OTGPath
 
         try {
