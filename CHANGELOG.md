@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Changed
+- Improved loading speed of new and existing media in large libraries ([#54])
 
 ## [1.14.3] - 2026-11-18
 ### Changed
@@ -281,6 +283,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fixed privacy policy link
 
 [#29]: https://github.com/FossifyOrg/Gallery/issues/29
+[#54]: https://github.com/FossifyOrg/Gallery/issues/54
 [#62]: https://github.com/FossifyOrg/Gallery/issues/62
 [#128]: https://github.com/FossifyOrg/Gallery/issues/128
 [#166]: https://github.com/FossifyOrg/Gallery/issues/166

@@ -1258,10 +1258,12 @@ class MainActivity : SimpleActivity(), DirectoryOperationsListener {
                 }
 
                 if (!directory.isRecycleBin()) {
-                    getCachedMedia(directory.path, getVideosOnly, getImagesOnly) {
+                    // curMedia was just fetched, no need to check each cached file for existence again
+                    getCachedMedia(directory.path, getVideosOnly, getImagesOnly, validateFiles = false) {
+                        val curMediaSet = curMedia.toHashSet()
                         val mediaToDelete = ArrayList<Medium>()
                         it.forEach {
-                            if (!curMedia.contains(it)) {
+                            if (!curMediaSet.contains(it)) {
                                 val medium = it as? Medium
                                 val path = medium?.path
                                 if (path != null) {

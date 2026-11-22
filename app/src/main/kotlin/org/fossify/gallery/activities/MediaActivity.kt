@@ -696,7 +696,7 @@ class MediaActivity : SimpleActivity(), MediaOperationsListener {
                     gotMedia(newMedia, false)
 
                     // remove cached files that are no longer valid for whatever reason
-                    val newPaths = newMedia.mapNotNull { it as? Medium }.map { it.path }
+                    val newPaths = newMedia.mapNotNull { (it as? Medium)?.path }.toHashSet()
                     oldMedia
                         .mapNotNull { it as? Medium }
                         .filter { !newPaths.contains(it.path) }
